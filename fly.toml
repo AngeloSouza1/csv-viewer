@@ -1,0 +1,31 @@
+# fly.toml app configuration file generated for csv-viewer on 2024-02-06T13:41:10-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'csv-viewer'
+primary_region = 'gru'
+console_command = '/rails/bin/rails console'
+
+[build]
+
+[[mounts]]
+  source = 'data'
+  destination = '/data'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 256
+
+[[statics]]
+  guest_path = '/rails/public'
+  url_prefix = '/'

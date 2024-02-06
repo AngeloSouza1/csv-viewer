@@ -1,5 +1,3 @@
-
-
 <h1>Dados</h1>
 
 <%= link_to "Importar CSV", new_dado_path, class: "btn btn-primary mb-3" %>
@@ -8,23 +6,27 @@
   <%= button_tag "Limpar Tela", type: "submit", class: "btn btn-danger mb-3", data: { confirm: "Tem certeza que deseja limpar a tela?" } %>
 <% end %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Idade</th>
-      <th>Cidade</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @dados.each do |dado| %>
+<% if @dados.any? %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= dado.nome %></td>
-        <td><%= dado.idade %></td>
-        <td><%= dado.cidade %></td>
+        <% @csv_headers.each do |header| %>
+          <th><%= header.humanize %></th>
+        <% end %>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @dados.each do |dado| %>
+        <tr>
+          <% @csv_headers.each do |header| %>
+            <td><%= dado[header] %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Nenhum dado encontrado.</p>
+<% end %>
 
 
