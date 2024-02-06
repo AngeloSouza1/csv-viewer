@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for csv-viewer on 2024-02-06T13:41:10-03:00
+# fly.toml app configuration file generated for csv-viewer-v2 on 2024-02-06T19:17:00-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'csv-viewer'
+app = 'csv-viewer-v2'
 primary_region = 'gru'
 console_command = '/rails/bin/rails console'
 

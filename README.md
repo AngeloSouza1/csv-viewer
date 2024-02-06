@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Olá, segue o link do aplicativo:
 
-Things you may want to cover:
+https://csv-viewer-v2.fly.dev/
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-> Na pasta 'TMP' do Projeto, consta 2 arquivos CSV para teste!
