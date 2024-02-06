@@ -1,0 +1,10 @@
+<h1>Importar Dados CSV</h1>
+
+<%= form_tag importar_dados_path, multipart: true do %>
+  <div class="form-group">
+    <%= file_field_tag :file, class: "form-control-file" %>
+  </div>
+  <%= submit_tag "Importar", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Voltar", root_path, class: "btn btn-secondary mt-3" %>

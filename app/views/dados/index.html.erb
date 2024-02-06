@@ -1,0 +1,30 @@
+
+
+<h1>Dados</h1>
+
+<%= link_to "Importar CSV", new_dado_path, class: "btn btn-primary mb-3" %>
+
+<%= form_tag limpar_tela_dados_path, method: :delete do %>
+  <%= button_tag "Limpar Tela", type: "submit", class: "btn btn-danger mb-3", data: { confirm: "Tem certeza que deseja limpar a tela?" } %>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Cidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dados.each do |dado| %>
+      <tr>
+        <td><%= dado.nome %></td>
+        <td><%= dado.idade %></td>
+        <td><%= dado.cidade %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
